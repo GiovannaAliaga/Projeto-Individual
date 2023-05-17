@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./Imagens/IconeSite.png" type="image/x-icon">
     <link rel="stylesheet" href="Cadastro.css">
-    <title>Cadastre-se</title>
+    <title>Beauty&Makeup | Cadastre-se</title>
 </head>
 <nav>
     <ul>
@@ -42,11 +42,11 @@
         </div>
         <br>
         <div class="cadastro">
-            <a href="#"><button onclick="cadastrar()"><b>Cadastrar</b></button></a>
+            <a href="./Login.html"><button onclick="cadastrar()"><b>Cadastrar</b></button></a>
         </div>
         <br>
         <div class="entrar">
-            <b>Já possui uma conta? <a href="#">Entrar</b></a>
+            <b>Já possui uma conta? <a href="./Login.html">Entrar</b></a>
         </div>
     </div>
     <footer>
@@ -84,5 +84,27 @@
 
     </footer>
 </body>
+<div id="div_mensagem"></div>
 
 </html>
+<script>
+    function cadastrar() {
+
+        var nomeVar = nome_input.value;
+        var sobrenomeVar = sobrenome_input.value;
+        var emailVar = email_input.value;
+        var telefoneVar = telefone_input.value;
+        var senhaVar = senha_input.value;
+        
+    if (nomeVar == "" || sobrenomeVar == "" || emailVar == "" || telefoneVar == "" || senhaVar == "" ) {
+            cardErro.style.display = "block"
+            alert("Mensagem de erro para todos os campos em branco");
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+    }
+</script>

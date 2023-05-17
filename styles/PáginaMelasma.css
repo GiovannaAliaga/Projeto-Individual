@@ -89,11 +89,17 @@ section {
 
 .Postagem1 img {
     width: 500px;
+    border-radius: 10px;
 }
 
 .Postagem2 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
+}
+
+.Postagem2 img {
+    width: 500px;
+    margin-left: 100px;
 }
 
 

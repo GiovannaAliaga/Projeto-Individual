@@ -6,7 +6,7 @@
 /* Fundo de tela */
 
 body {
-    background: url(./Imagens/FundoTelaCadastro.jpeg) fixed no-repeat;
+    background-image: url(./Imagens/FundoTelaCadastro.jpeg);
     margin: 0;
     padding: 0;
     background-size: cover;
