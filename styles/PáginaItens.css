@@ -5,9 +5,10 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;  /* Deixa os elementos lado a lado */
-    flex-direction: column; 
-    background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #a4bde7, #97e6ce);
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(254, 206, 230); */
+    background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #a6c0ea, #97e6ce);
 }
 
 nav {
@@ -18,7 +19,7 @@ nav {
 
 nav img {
     width: 200px;
-    list-style-type: none; /* Tira as bolinhas de lista ao lado da foto */
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
@@ -43,12 +44,12 @@ nav li a {
 
 }
 
- nav li a:hover { /* Animação no botão */
+nav li a:hover {
     transition: .3s;
     color: rgb(187, 11, 99);
 }
 
-#buttonNav {
+button {
     margin-left: 880px;
     border: solid rgb(187, 11, 99);
     margin-top: 10px;
@@ -62,38 +63,17 @@ nav li a {
     font-family: 'Montserrat', sans-serif;
 }
 
-#buttonNav:hover {
+button:hover {
     transition: .3s;
     color: rgb(126, 7, 67);
 }
 
+header,
 section {
     max-width: 800px;
     margin: 0 auto;
-    /* Deixa os itens da página centralizados */
 
 }
-
-/* Botão curtida  */
-
-
-#curtir {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-image: url('./img-notícias/icone-de-coeur-noir.png');
-    background-size: cover;
-  }
- 
-  #curtir.liked {
-    background-image: url('./img-notícias/icone-de-coeur-rose-1.png');
-  }
-  
-
-/* Postagem */
 
 .Postagem1 {
     align-items: center;
@@ -108,7 +88,7 @@ section {
 }
 
 .Postagem1 img {
-    width: 500px;
+    width: 600px;
     border-radius: 10px;
 }
 
@@ -118,14 +98,39 @@ section {
 }
 
 .Postagem2 img {
-    width: 500px;
-    margin-left: 100px;
+    width: 450px;
+    /* margin-left: 100px; */
 }
-
 
 .Postagem2 h2 {
     font-family: 'Montserrat', sans-serif;
 }
+
+.Postagem3 img {
+    width: 200px;
+}
+
+.Postagem4 img {
+    width: 295px;
+}
+
+.Postagem5 img {
+    width: 200px;
+}
+
+.Postagem6 img {
+    width: 260px;
+}
+
+.Postagem7 img {
+    width: 280px;
+}
+
+.Postagem8 img {
+    width: 280px;
+}
+
+
 
 /* Footer */
 
@@ -135,7 +140,7 @@ footer {
     height: 130px;
     display: flex;
     margin: 80px 0 0 0;
-
+    
 }
 
 .RedeSocial {
@@ -146,7 +151,7 @@ footer {
     align-items: center;
 }
 
-.RedeSocial img {
+.RedeSocial img{
     width: 50px;
 }
 

@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     /* background-color: rgb(254, 206, 230); */
-    background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #9db9e5, #97e6ce, #83ed98, #dbda86);
+    background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #9db9e5, #97e6ce);
 }
 
 nav {

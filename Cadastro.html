@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./Imagens/IconeSite.png" type="image/x-icon">
-    <link rel="stylesheet" href="Cadastro.css">
+    <link rel="stylesheet" href="cadastro.css">
     <title>Beauty&Makeup | Cadastre-se</title>
 </head>
 <nav>
@@ -21,6 +21,11 @@
 
 <body>
     <div id="main">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
         <div>
             <h1>Cadastre-se</h1>
             <div class="itens">
@@ -48,6 +53,9 @@
         <div class="entrar">
             <b>Já possui uma conta? <a href="./Login.html">Entrar</b></a>
         </div>
+        <!-- <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif">
+        </div> -->
     </div>
     <footer>
         <div class="RedeSocial">
@@ -84,7 +92,7 @@
 
     </footer>
 </body>
-<div id="div_mensagem"></div>
+<div id="div_erros_login"></div>
 
 </html>
 <script>
@@ -106,5 +114,50 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                emailServer: emailVar,
+                telefoneServer: telefoneVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "./login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+        
     }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+    
 </script>

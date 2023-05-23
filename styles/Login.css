@@ -7,7 +7,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-image: url(./Imagens/FundoTelaCadastro.jpeg);
+    background-image: url(./Imagens/FundoAzul.jpeg);
     background-size: cover;
 }
 
@@ -74,18 +74,19 @@ h1 {
     font-size: 50px;
     color: rgb(126, 7, 67);
     font-family: 'Montserrat', sans-serif;
-    margin-left: 185px;
+    margin-left: 175px;
 }
 
 
 #main {
     width: 500px;
     height: 460px;
-    background-color: rgb(246, 183, 205);
-    margin-left: 490px;
+    /* background-color: rgb(246, 183, 205);  */
+    margin-left: 850px;
     align-items: center;
     border-radius: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
+    /* border: 3px solid rgb(246, 64, 161);  */
 }
 
 
@@ -117,9 +118,6 @@ input:focus {
     border-bottom: 1px solid rgb(126, 7, 67);
 }
 
-::placeholder {
-    color: rgb(208, 200, 200);
-}
 
 .login button {
     margin-left: 210px;
