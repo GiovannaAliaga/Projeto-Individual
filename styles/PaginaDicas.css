@@ -61,6 +61,7 @@ button {
     border-radius: 25px;
     font-size: 17px;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
 }
 
 button:hover {
@@ -90,7 +91,7 @@ button:hover {
 
 .NomesMakes a:hover{
     transition: .3s;
-    color: rgb(126, 7, 67);
+    color: rgb(119, 4, 62);
 }
 
 .container1 {
@@ -106,77 +107,19 @@ button:hover {
     list-style: none;
 }
 
-.caixa1 {
+.caixa {
 
     width: 300px;
     height: 90px;
-    background-color: palevioletred;
+    background-color: rgb(243, 125, 166);
     border: 1px solid rgb(204, 12, 76);
     margin-left: 12px;
     text-align: center;
     align-items: center;
+    border-radius: 10px;
 
 }
 
-.caixa2 {
-
-    width: 300px;
-    height: 90px;
-    background-color: rgb(166, 239, 188);
-    border: 1px solid rgb(2, 235, 72);
-    margin-left: 12px;
-    text-align: center;
-    align-items: center;
-
-}
-
-.caixa3 {
-
-    width: 300px;
-    height: 90px;
-    background-color: rgb(68, 165, 240);
-    border: 1px solid rgb(24, 100, 158);
-    margin-left: 12px;
-    text-align: center;
-    align-items: center;
-
-}
-
-.caixa4 {
-
-    width: 300px;
-    height: 90px;
-    background-color: rgb(246, 241, 108);
-    border: 1px solid rgb(200, 193, 3);
-    margin-left: 12px;
-    text-align: center;
-    align-items: center;
-
-}
-
-.caixa5 {
-
-    width: 300px;
-    height: 90px;
-    background-color: rgb(211, 156, 121);
-    border: 1px solid rgb(224, 100, 24);
-    margin-left: 12px;
-    text-align: center;
-    align-items: center;
-
-}
-
-.caixa6 {
-
-    width: 300px;
-    height: 90px;
-    background-color: rgb(144, 168, 224);
-    border: 1px solid rgb(23, 71, 184);
-    margin-left: 12px;
-    text-align: center;
-    align-items: center;
-
-}
 
 .container1e2 {
     background-color: rgb(254, 206, 230);

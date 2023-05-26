@@ -5,9 +5,10 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;  /* Deixa os elementos lado a lado */
-    flex-direction: column; 
-    background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #a4bde7, #97e6ce);
+    display: flex;
+    /* Deixa os elementos lado a lado */
+    flex-direction: column;
+    background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #9db9e5, #97e6ce);
 }
 
 nav {
@@ -18,7 +19,8 @@ nav {
 
 nav img {
     width: 200px;
-    list-style-type: none; /* Tira as bolinhas de lista ao lado da foto */
+    list-style-type: none;
+    /* Tira as bolinhas de lista ao lado da foto */
     margin: 0;
     padding: 0;
 }
@@ -43,7 +45,8 @@ nav li a {
 
 }
 
- nav li a:hover { /* Animação no botão */
+nav li a:hover {
+    /* Animação no botão */
     transition: .3s;
     color: rgb(187, 11, 99);
 }
@@ -77,21 +80,24 @@ section {
 /* Botão curtida  */
 
 
-#curtir {
-    width: 30px;
-    height: 30px;
+#like-btn {
+    width: 50px;
+    height: 50px;
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
-    background-image: url('./img-notícias/icone-de-coeur-noir.png');
+    background-image: url('./Imagens/IconeCoracaoT.png');
     background-size: cover;
-  }
- 
-  #curtir.liked {
-    background-image: url('./img-notícias/icone-de-coeur-rose-1.png');
-  }
-  
+    position: absolute;
+    margin-left: 55vh;
+    margin-top: -11vh;
+}
+
+#like-btn.liked {
+    background-image: url('./Imagens/IconeCoracaoR.png');
+}
+
 
 /* Postagem */
 

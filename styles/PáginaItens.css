@@ -61,6 +61,7 @@ button {
     border-radius: 25px;
     font-size: 17px;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
 }
 
 button:hover {
@@ -130,6 +131,19 @@ section {
     width: 280px;
 }
 
+.Postagem9 img {
+    width: 470px;
+}
+
+.Postagem10 img {
+    width: 250px;
+    border-radius: 95px;
+}
+
+.Postagem11 img {
+    width: 250px;
+    border-radius: 25px;
+}
 
 
 /* Footer */

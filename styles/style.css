@@ -74,6 +74,7 @@ nav li a:hover {
     text-shadow: none;
     border-radius: 25px;
     font-size: 17px;
+    cursor: pointer;
 }
 
 #buttonNav:hover {

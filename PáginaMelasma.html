@@ -24,7 +24,7 @@
 
     <div class="Postagem1">
       <h1>MELASMA: Como maquiar as manchas?</h1>
-      <button id="curtir"></button>
+      <button id="like-btn"></button>
       <h2>Você tem MELASMA e não sabe bem como fazer a maquiagem na pele com manchas? Irei te ajudar!</h2>
       <br>
       <img src="./Imagens/Melasma.png" alt="Imagem da postagem">
@@ -122,15 +122,15 @@
 
 </html>
 <script>
-  const curtida = document.getElementById("curtir");
+  const likeBtn = document.getElementById("like-btn");
   let isLiked = false;
   
-  curtida.addEventListener("click", function() {
+  likeBtn.addEventListener("click", function() {
     if (!isLiked) {
-      curtida.classList.add("liked");
-      isLiked = true;
+      likeBtn.classList.add("liked");
+      isLiked = true; 
     } else {
-      curtida.classList.remove("liked");
+      likeBtn.classList.remove("liked");
       isLiked = false;
     }
   });
