@@ -15,14 +15,18 @@
         <li><b><a href="#SobreMim">Conheça-me</a></b></li>
         <li><b><a href="./Cadastro.html">Cadastre-se</a></b></li>
     </ul>
-    <a href="./Login.html"><button type="button"><b>Entrar</b></button></a>
+    <a href="./Login.html"><button id="buttonNav" type="button"><b>Entrar</b></button></a>
 </nav>
 
 <body>
+    <div class="SetaEsquerda">
+        <a href="PaginaDicas.html"><img src="./Imagens/seta-esquerda.png"></a>
+     </div>
     <section>
 
         <div class="Postagem1">
             <h1>Como usar corretivo colorido na maquiagem da maneira certa</h1>
+            <button id="like-btn"></button>
             <h2>Quer conseguir uma make com pele perfeita de verdade? O segredo é saber como usar corretivo COLORIDO!
             </h2>
             <br>
@@ -121,3 +125,17 @@
 </footer>
 
 </html>
+<script>
+    const likeBtn = document.getElementById("like-btn");
+    let isLiked = false;
+
+    likeBtn.addEventListener("click", function () {
+        if (!isLiked) {
+            likeBtn.classList.add("liked");
+            isLiked = true;
+        } else {
+            likeBtn.classList.remove("liked");
+            isLiked = false;
+        }
+    });
+</script>

@@ -11,6 +11,14 @@ body {
     flex-direction: column;
 }
 
+.SetaEsquerda img {
+    width: 55px;
+    margin-left: 20px;
+    position: absolute;
+    height: 55px;
+    margin-top: 15px;
+}
+
 nav {
     background-color: rgb(243, 125, 166);
     font-family: 'Montserrat', sans-serif;

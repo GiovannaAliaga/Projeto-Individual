@@ -17,6 +17,13 @@ body img {
     height: 100%;
 }
 
+.SetaEsquerda img {
+    width: 55px;
+    margin-left: 20px;
+    position: absolute;
+    height: 55px;
+    margin-top: 15px;
+}
 /* Nav */
 
 nav {

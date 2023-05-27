@@ -8,7 +8,16 @@ body {
     display: flex;
     flex-direction: column;
     /* background-color: rgb(254, 206, 230); */
-    background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #9db9e5, #97e6ce);
+    /* background: linear-gradient(to bottom, blanchedalmond, rgb(255, 222, 161), #eda3c4, #eca8de, #b995e8, #9db9e5, #97e6ce); */
+    background: linear-gradient(to bottom, rgb(250, 224, 184), rgb(255, 222, 161), #eda3c4);
+}
+
+.SetaEsquerda img {
+    width: 55px;
+    margin-left: 20px;
+    position: absolute;
+    height: 55px;
+    margin-top: 15px;
 }
 
 nav {
@@ -49,7 +58,7 @@ nav li a:hover {
     color: rgb(187, 11, 99);
 }
 
-button {
+#buttonNav {
     margin-left: 880px;
     border: solid rgb(187, 11, 99);
     margin-top: 10px;
@@ -64,9 +73,30 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#buttonNav:hover {
     transition: .3s;
     color: rgb(126, 7, 67);
+}
+
+/* Botão curtida  */
+
+
+#like-btn {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url('./Imagens/IconeCoracaoT.png');
+    background-size: cover;
+    position: absolute;
+    margin-left: 49.5vh;
+    margin-top: -16vh;
+}
+
+#like-btn.liked {
+    background-image: url('./Imagens/IconeCoracaoR.png');
 }
 
 header,

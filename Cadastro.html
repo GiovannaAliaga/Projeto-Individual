@@ -20,6 +20,9 @@
 </nav>
 
 <body>
+    <div class="SetaEsquerda">
+       <a href="index.html"><img src="./Imagens/seta-esquerda.png"></a>
+    </div>
     <div id="main">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
@@ -103,8 +106,8 @@
         var emailVar = email_input.value;
         var telefoneVar = telefone_input.value;
         var senhaVar = senha_input.value;
-        
-    if (nomeVar == "" || sobrenomeVar == "" || emailVar == "" || telefoneVar == "" || senhaVar == "" ) {
+
+        if (nomeVar == "" || sobrenomeVar == "" || emailVar == "" || telefoneVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             alert("Mensagem de erro para todos os campos em branco");
 
@@ -153,11 +156,11 @@
         });
 
         return false;
-        
+
     }
 
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
-    
+
 </script>

@@ -11,6 +11,14 @@ body {
     background-size: cover;
 }
 
+.SetaEsquerda img {
+    width: 55px;
+    margin-left: 20px;
+    position: absolute;
+    height: 55px;
+    margin-top: 15px;
+}
+
 nav {
     background-color: rgb(243, 125, 166);
     font-family: 'Montserrat', sans-serif;
@@ -136,6 +144,22 @@ input:focus {
 }
 
 .login button:hover {
+    transition: .3s;
+    color: rgb(126, 7, 67);
+}
+
+.entrar b {
+    color: rgb(0, 0, 0);
+    text-shadow: none;
+    margin-left: 150px;
+
+}
+.entrar a {
+    text-decoration: none;
+    color: rgb(126, 7, 67);
+
+}
+.entrar button:hover {
     transition: .3s;
     color: rgb(126, 7, 67);
 }

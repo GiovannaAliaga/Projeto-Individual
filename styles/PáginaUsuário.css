@@ -47,7 +47,7 @@ nav li a:hover {
     color: rgb(187, 11, 99);
 }
 
-button {
+#buttonNav {
     margin-left: 880px;
     border: solid rgb(187, 11, 99);
     margin-top: 10px;
@@ -62,7 +62,12 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#buttonNav:hover {
     transition: .3s;
     color: rgb(126, 7, 67);
+}
+
+#nomeDinamico {
+    display: block;
+    font-size: 15px;
 }

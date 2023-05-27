@@ -15,11 +15,16 @@
         <li><b><a href="#SobreMim">Conheça-me</a></b></li>
         <li><b><a href="./Cadastro.html">Cadastre-se</a></b></li>
     </ul>
-    <a href="./Login.html"><button type="button"><b>Entrar</b></button></a>
+    <a href="./Login.html"><button id="buttonNav" type="button"><b>Entrar</b></button></a>
 </nav>
 <body>
     <div class="hello">
-        <h3>Olá, <span id="b_usuario"></span>!</h3>
+        <h3>Olá, <span id="nomeDinamico"></span>!</h3>
     </div>
 </body>
 </html>
+<script>
+
+nomeDinamico.innerHTML = sessionStorage.NOME_USUARIO;
+
+</script>
