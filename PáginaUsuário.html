@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./Imagens/IconeSite.png" type="image/x-icon">
     <link rel="stylesheet" href="PáginaUsuário.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Beauty&Makeup | Bem-vindo</title>
 </head>
-<nav>
-    <ul>
-        <li><b><a href="index.html">Home</a></b></li>
-        <li><b><a href="#SobreMim">Conheça-me</a></b></li>
-        <li><b><a href="./Cadastro.html">Cadastre-se</a></b></li>
-    </ul>
-    <a href="./Login.html"><button id="buttonNav" type="button"><b>Entrar</b></button></a>
-</nav>
 <body>
-    <div class="hello">
-        <h3>Olá, <span id="nomeDinamico"></span>!</h3>
-    </div>
+    
+    <div class="janela">
+        <div class="Menu-left">
+            <img src="./Imagens/LogoBranca.png">
+            
+            <div class="hello">
+                <h3>Olá, <span id="nomeDinamico"></span>!</h3>
+            </div>
+            
+            <div class="Dicas">
+                <a href="./PaginaDicas.html">
+                    <h3>Dicas de beleza</h3>
+                </a>
+            </div>
+            <button id="buttonSair" onclick="limparSessao()"><b>Sair</b></button>
+        </div>
+        
+        <h1>Confira quais os posts que estão fazendo sucesso</h1>
+            
+        </div>
+        <!-- <div>
+            <canvas id="myChart"></canvas>
+        </div> -->
 </body>
-</html>
 <script>
 
-nomeDinamico.innerHTML = sessionStorage.NOME_USUARIO;
+    nomeDinamico.innerHTML = sessionStorage.NOME_USUARIO;
 
 </script>

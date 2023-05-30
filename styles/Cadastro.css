@@ -143,6 +143,7 @@ input:focus {
     border-radius: 25px;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
     
 }
 
