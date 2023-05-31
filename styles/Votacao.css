@@ -1,6 +1,6 @@
-* {
+/* * {
     font-family: 'Montserrat', sans-serif;
-}
+} */
 
 body {
     margin: 0;
@@ -14,11 +14,13 @@ body {
     display: block;
     font-size: 20px;
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .hello {
     font-size: 20px;
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Menu-left img {
@@ -35,9 +37,10 @@ body {
     align-items: center;
     border-right: 3px solid rgb(243, 125, 166);
     background-color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
 }
 
-#buttonSair {
+#buttonVoltar {
     width: 140px;
     height: 40px;
     border: 1px solid rgb(255, 255, 255);
@@ -49,6 +52,7 @@ body {
     background-color: black;
     color: white;
     margin-top: 90px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -64,10 +68,12 @@ body {
     color: #fff;
     text-align: center;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Dicas h3 {
     margin-left: 18px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Dicas a:hover {
@@ -85,40 +91,58 @@ body {
     transition: .3s ease;
 }
 
-.Formulario a {
-    text-decoration: none;
-    display: flex;
-    width: 180px;
-    height: 60px;
+
+#main h1 {
+ text-align: center;
+ font-family: 'Montserrat', sans-serif;
+ color: black
+}
+
+#main {
+    background-color:#eb699b ; 
+    margin-left: 67vh;
+    margin-top: 100px;
+    width: 800px;
+    height: 530px;
+    border-radius: 20px;
+    border: 4px solid #000000;
+}
+
+.frases {
+    font-size: 24px;
+    color: black;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+#buttonEnviar {
+    margin-left: 40vh;
+    margin-top: 5vh;
     border-radius: 10px;
+    font-size: 19px;
+    cursor: pointer;
     background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
     background-size: 300%;
     transition: .3s;
     color: #fff;
     text-align: center;
     align-items: center;
+    width: 175px;
+    height: 40px;
+    border: #aa2068;
 }
 
-.Formulario h3 {
-    margin-left: 45px;
-}
-
-.Formulario a:hover {
+#buttonEnviar:hover {
     background-size: 320%;
     background-position: right center;
 }
 
-.Formulario a:hover svg {
+#buttonEnviar:hover svg {
     fill: #fff;
 }
 
-.Formulario a svg {
+#buttonEnviar svg {
     width: 23px;
     fill: #f09f33;
     transition: .3s ease;
-}
-
-h1 {
-    margin-left: 70vh;
 }
 

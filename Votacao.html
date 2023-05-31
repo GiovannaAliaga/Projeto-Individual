@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="Votacao.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="janela">
+        <div class="Menu-left">
+            <img src="./Imagens/LogoBranca.png">
+
+            <div class="hello">
+                <h3>Olá, <span id="nomeDinamico"></span>!</h3>
+            </div>
+
+            <div class="Dicas">
+                <a href="./PaginaDicas.html">
+                    <h3>Dicas de beleza</h3>
+                </a>
+            </div>
+
+
+            <a href="./PáginaUsuário.html"><button id="buttonVoltar"><b>Voltar</b></button></a>
+        </div>
+
+        <div id="main">
+            <br>
+            <h1>Qual post você mais gostou?</h1>
+            <br>
+            <br>
+            <input type="radio" nome="opcao1">
+            <span class="frases">MELASMA: Como maquiar as manchas?</span>
+            <br>
+            <br>
+            <input type="radio" nome="opcao2">
+            <span class="frases">Como usar corretivo colorido na maquiagem da maneira certa</span>
+            <br>
+            <br>
+            <input type="radio" nome="opcao3">
+            <span class="frases">15 itens que não podem faltar em sua nécessarie para fazer uma maquiagem</span>
+            <br>
+            <br>
+            <input type="radio" nome="opcao4">
+            <span class="frases">Como fazer a maquiagem durar mais?</span>
+            <br>
+            <br>
+            <input type="radio" nome="opcao5">
+            <span class="frases">Tutorial : Maquiagem para os olhos</span>
+            <br>
+            <br>
+            <input type="radio" nome="opcao6">
+            <span class="frases">6 Dicas de beleza para incluir na rotina de cuidados</span>
+            <br>
+            <br>
+            <button id="buttonEnviar" onclick="enviarResposta()">Enviar resposta!</button>
+        </div>
+</body>
+
+</html>
+<script>
+    nomeDinamico.innerHTML = sessionStorage.NOME_USUARIO;
+</script>
