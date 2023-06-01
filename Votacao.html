@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <link rel="stylesheet" href="Votacao.css">
     <title>Document</title>
 </head>
@@ -40,35 +40,118 @@
             <h1>Qual post você mais gostou?</h1>
             <br>
             <br>
-            <input type="radio" nome="opcao1">
-            <span class="frases">MELASMA: Como maquiar as manchas?</span>
+            <input type="radio" name="opcao" value="1">
+            <span class="frases"><b>MELASMA: Como maquiar as manchas?</b></span>
             <br>
             <br>
-            <input type="radio" nome="opcao2">
-            <span class="frases">Como usar corretivo colorido na maquiagem da maneira certa</span>
+            <input type="radio" name="opcao" value="2">
+            <span class="frases"><b>Como usar corretivo colorido na maquiagem da maneira certa</b></span>
             <br>
             <br>
-            <input type="radio" nome="opcao3">
-            <span class="frases">15 itens que não podem faltar em sua nécessarie para fazer uma maquiagem</span>
+            <input type="radio" name="opcao" value="3">
+            <span class="frases"><b>15 itens que não podem faltar em sua nécessarie para fazer uma maquiagem</b></span>
             <br>
             <br>
-            <input type="radio" nome="opcao4">
-            <span class="frases">Como fazer a maquiagem durar mais?</span>
+            <input type="radio" name="opcao" value="4">
+            <span class="frases"><b>Como fazer a maquiagem durar mais?</b></span>
             <br>
             <br>
-            <input type="radio" nome="opcao5">
-            <span class="frases">Tutorial : Maquiagem para os olhos</span>
+            <input type="radio" name="opcao" value="5">
+            <span class="frases"><b>Tutorial : Maquiagem para os olhos</b></span>
             <br>
             <br>
-            <input type="radio" nome="opcao6">
-            <span class="frases">6 Dicas de beleza para incluir na rotina de cuidados</span>
+            <input type="radio" name="opcao" value="6">
+            <span class="frases"><b>6 Dicas de beleza para incluir na rotina de cuidados</b></span>
             <br>
             <br>
-            <button id="buttonEnviar" onclick="enviarResposta()">Enviar resposta!</button>
+            <button id="buttonEnviar" onclick="enviarResposta()"><b>Enviar resposta!</b></button>
         </div>
 </body>
 
 </html>
 <script>
     nomeDinamico.innerHTML = sessionStorage.NOME_USUARIO;
+
+    //     function enviarResposta() {
+    //   // Obtém o valor selecionado pelo usuário
+    //   var opcaoSelecionada = document.querySelector('input[name="opcao"]:checked');
+
+    //   // Verifica se uma opção foi selecionada
+    //   if (opcaoSelecionada) {
+    //     // Obtém o valor da opção selecionada
+    //     var valorSelecionado = opcaoSelecionada.value;
+
+    //     // Obtém o texto correspondente à opção selecionada
+    //     var textoSelecionado = document.querySelector('.frases:nth-of-type(' + valorSelecionado + ')').textContent;
+
+    //     // Exibe a opção selecionada
+    //     alert("Voto registrado com sucesso, obrigada!")
+    //   } else {
+    //     // Caso nenhuma opção tenha sido selecionada
+    //     alert("Por favor, selecione uma opção.");
+    //   }
+    // }
+
+    function enviarResposta() {
+        var opcaoSelecionada = document.querySelector('input[name="opcao"]:checked'); // seleciona um elemento html 
+
+        if (opcaoSelecionada) {
+            var valorSelecionado = opcaoSelecionada.value;
+            var textoSelecionado = document.querySelector('.frases:nth-of-type(' + valorSelecionado + ')').textContent;
+
+            // Exibe o alerta personalizado
+            Swal.fire({
+                icon: 'success', // Ícone do alerta
+                title: 'Voto computado com sucesso' // Título do alerta
+                // text: "Obrigada pela escolha!" // Mensagem do alerta
+                
+            });
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Por favor, selecione uma opção.'
+                // text: 'Por favor, selecione uma opção.'
+            });
+        }
+
+        fetch("/usuarios/cadastrarPontuacao", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.j
+                    // idUsuarioServer: idUsuario,
+                    idUsuarioServer: sessionStorage.ID_USUARIO,
+                    pontosServer: pontos,
+                    mediaServer: media,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert('Quiz concluido, iremos mostrar sua pontuação')
+                    window.location = "./pontuação.html";
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+        }
+    
+    
+
+
+
+
+
+
+
+
 </script>
