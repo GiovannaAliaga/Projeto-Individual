@@ -1,0 +1,213 @@
+/* * {
+    font-family: 'Montserrat', sans-serif;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url(./Imagens/FundoAzul.jpeg);
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+.SetaEsquerda img {
+    width: 55px;
+    margin-left: 20px;
+    position: absolute;
+    height: 55px;
+    margin-top: 15px;
+}
+
+nav {
+    background-color: rgb(243, 125, 166);
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+nav img {
+    width: 200px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+
+nav li a:hover {
+    transition: .3s;
+    color: rgb(187, 11, 99);
+}
+
+button {
+    margin-left: 880px;
+    border: solid rgb(187, 11, 99);
+    margin-top: 10px;
+    background: rgb(252, 165, 216);
+    color: rgb(187, 11, 99);
+    height: 40px;
+    width: 100px;
+    text-shadow: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: .3s;
+    color: rgb(126, 7, 67);
+}
+
+/* Login */
+
+h1 {
+    font-size: 50px;
+    color: rgb(126, 7, 67);
+    margin-left: 175px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#main {
+    width: 500px;
+    height: 460px;
+    /* background-color: rgb(246, 183, 205);  */
+    margin-left: 850px;
+    align-items: center;
+    border-radius: 15px;
+    margin-top: 25px;
+    /* border: 3px solid rgb(246, 64, 161);  */
+}
+
+
+input {
+    border: rgb(126, 7, 67);
+    background: rgb(224, 145, 173);
+    border-radius: 100px;
+    font-size: 16px;
+    width: 200px;
+    height: 40px;
+    padding: 0 0 0 20px;
+    color: black;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.itens {
+    text-align: center;
+    color: rgb(126, 7, 67);
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 10px 19px -19px rgb(126, 7, 67);
+    border-bottom: 1px solid rgb(126, 7, 67);
+}
+
+
+.login button {
+    margin-left: 210px;
+    border: solid rgb(126, 7, 67);
+    margin-top: 10px;
+    background: rgb(252, 165, 216);
+    color: rgb(126, 7, 67);
+    height: 35px;
+    width: 90px;
+    text-shadow: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.login button:hover {
+    transition: .3s;
+    color: rgb(126, 7, 67);
+}
+
+.entrar b {
+    color: rgb(0, 0, 0);
+    text-shadow: none;
+    margin-left: 115px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.entrar a {
+    text-decoration: none;
+    color: rgb(126, 7, 67);
+    font-family: 'Montserrat', sans-serif;
+
+}
+.entrar button:hover {
+    transition: .3s;
+    color: rgb(126, 7, 67);
+}
+
+.mensagem_erro {
+    color: rgb(126, 7, 67);
+   font-size: 15px;
+   }
+
+/* Footer */
+
+footer {
+    background-color: rgb(243, 125, 166);
+    width: 100%;
+    height: 130px;
+    display: flex;
+    margin: 80px 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.RedeSocial {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.RedeSocial img{
+    width: 50px;
+}
+
+.contato {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.LogoFooter img {
+    width: 280px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.direitos {
+    margin-top: 90px;
+}

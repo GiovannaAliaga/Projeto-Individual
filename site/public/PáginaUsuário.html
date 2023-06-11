@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./Imagens/IconeSite.png" type="image/x-icon">
+    <link rel="stylesheet" href="PáginaUsuário.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <title>Beauty&Makeup | Bem-vindo</title>
+</head>
+
+<body onload="plotarDados()">
+
+    <div class="janela">
+        <div class="Menu-left">
+            <img src="./Imagens/LogoBranca.png">
+
+            <div class="hello">
+                <h3>Olá, <span id="nomeDinamico"></span>!</h3>
+            </div>
+
+            <div class="Dicas">
+                <a href="./PaginaDicas.html">
+                    <h3>Dicas de beleza</h3>
+                </a>
+            </div>
+
+            <div class="Formulario">
+                <a href="./Votacao.html">
+                    <h3>Vote aqui</h3>
+                </a>
+            </div>
+
+            <div class="Calculadora">
+                <a href="./Calculadora.html">
+                    <h3>Calculadora de diluição de produto</h3>
+                </a>
+            </div>
+            <button id="buttonSair" onclick="limparSessao()"><b>Sair</b></button>
+        </div>
+
+    </div>
+
+    <h1>Confira quais posts estão fazendo sucesso</h1>
+     <div class="Dashboard">
+        <canvas id="myChart"></canvas>
+    </div> 
+
+    <div class="LegendaGrafico">
+        <ul>
+          <li><span class="legenda" style="background-color: #c676f5;"></span><b> Melasma - Como maquiar as manchas?</b></li>
+          <li><span class="legenda" style="background-color: #92e992;"></span><b> Como usar corretivo colorido na maquiagem da maneira certa</b></li>
+          <li><span class="legenda" style="background-color: #fcf883;"></span><b> 15 itens que não podem faltar em sua nécessarie para fazer uma maquiagem</b></li>
+          <li><span class="legenda" style="background-color: #8e8ef6;"></span><b> Como fazer a maquiagem durar mais</b></li>
+          <li><span class="legenda" style="background-color: #f46dcb;"></span><b> Tutorial : Maquiagem para os olhos</b></li>
+          <li><span class="legenda" style="background-color: #f8b16a;"></span><b> 6 Dicas de beleza para incluir na rotina de cuidados</b></li>
+        </ul>
+      </div>
+</body>
+
+</html>
+<script>
+
+    nomeDinamico.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function limparSessao() {
+            window.location.href = 'index.html';
+    }
+
+    async function requisiçãoDados() {
+
+      lista = await fetch("/votos/buscarDados", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(res => res.json()) ;
+        return lista;
+    }
+        
+
+    const labels = [];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+        label:'Quantidade de votos',
+        backgroundColor: [],
+        data: []
+        }
+    ]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+  async function plotarDados() {
+        var dados = await requisiçãoDados()
+        myChart.data.datasets[0].data = []
+        console.log(dados);
+
+        for(var i = 0; i < dados.length; i++) {
+            labels.push(`Post ${dados[i].fkVotacao}`)
+            myChart.data.datasets[0].data.push(dados[i].votacao) 
+            if( dados[i].fkVotacao == 1) {
+                myChart.data.datasets[0].backgroundColor[i] = "#c676f5"
+            } else if( dados[i].fkVotacao == 2 ) {
+                myChart.data.datasets[0].backgroundColor[i] = "#92e992"
+            } else if( dados[i].fkVotacao == 3 ) {
+                myChart.data.datasets[0].backgroundColor[i] = "#fcf883"
+            } else if( dados[i].fkVotacao == 4 ) {
+                myChart.data.datasets[0].backgroundColor[i] = "#8e8ef6"
+            } else if( dados[i].fkVotacao == 5 ) {
+                myChart.data.datasets[0].backgroundColor[i] = "#f46dcb"
+            } else if( dados[i].fkVotacao == 6 ) {
+                myChart.data.datasets[0].backgroundColor[i] = "#f8b16a"
+            }
+        console.log(dados[0].fkVotacao);
+
+        myChart.update() 
+    }
+}
+
+</script>

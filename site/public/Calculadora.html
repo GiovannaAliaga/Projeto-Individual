@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./Imagens/IconeSite.png" type="image/x-icon">
+    <link rel="stylesheet" href="Calculadora.css">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div class="janela">
+        <div class="Menu-left">
+            <img src="./Imagens/LogoBranca.png">
+
+            <div class="hello">
+                <h3>Olá, <span id="nomeDinamico"></span>!</h3>
+            </div>
+
+            <div class="Dicas">
+                <a href="./PaginaDicas.html">
+                    <h3>Dicas de beleza</h3>
+                </a>
+            </div>
+
+
+            <a href="./PáginaUsuário.html"><button id="buttonVoltar"><b>Voltar</b></button></a>
+        </div>
+        <div id="main">
+            <h2>Calculadora de Diluição</h2>
+            <div class="grupo-input">
+                <b>Quantidade do Produto (ml):</b>
+                <br>
+                <br>
+                <input type="number" id="input_quantidade_produto">
+            </div>
+            <div class="grupo-input">
+               <b>Quantidade do Diluente (ml):</b>
+               <br>
+               <br>
+               <input type="number" id="input_quantidade_diluente">
+            </div>
+            <div class="grupo-input">
+                <b>Concentração Desejada (%):</b>
+                <br>
+                <br>
+                <input type="number" id="input_concentracao_desejada">
+            </div>
+            <button id="buttonCalcular" onclick="calcularDiluicao()"><b>Calcular</b></button>
+            <div id="resultado"></div>
+        </div>
+
+</body>
+
+</html>
+<script>
+
+    nomeDinamico.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function calcularDiluicao() {
+        var quantidadeProduto = input_quantidade_produto.value;
+        var quantidadeDiluente = input_quantidade_diluente.value;
+        var concentracaoDesejada = input_concentracao_desejada.value;
+
+        // Cálculo
+        var quantidadeFinal = parseFloat(quantidadeProduto) + parseFloat(quantidadeDiluente);
+        var fatorDiluicao = (parseFloat(quantidadeProduto) / quantidadeFinal);
+        var concentracaoDiluida = fatorDiluicao * parseFloat(concentracaoDesejada);
+
+        // Resultado
+        var elementoResultado = document.getElementById("resultado");
+        elementoResultado.innerHTML = "A concentração diluída será de " + concentracaoDiluida.toFixed(2) + "%";
+    }
+
+</script>

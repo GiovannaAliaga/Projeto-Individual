@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <link rel="shortcut icon" href="./Imagens/IconeSite.png" type="image/x-icon">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Beauty&Makeup | Cadastre-se</title>
+</head>
+<nav>
+    <ul>
+        <li><b><a href="index.html">Home</a></b></li>
+        <li><b><a href="#SaibaMais">Saiba-mais</a></b></li>
+        <li><b><a href="./Cadastro.html">Cadastre-se</a></b></li>
+    </ul>
+    <a href="./Login.html"><button id="buttonNav" type="button"><b>Entrar</b></button></a>
+</nav>
+
+<body>
+    <div class="SetaEsquerda">
+        <a href="index.html"><img src="./Imagens/seta-esquerda.png"></a>
+     </div>
+    <div id="main">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div>
+            <h1>Cadastre-se</h1>
+            <div class="itens">
+                <h3>Nome</h3>
+                <input id="nome_input" />
+
+                <h3>Sobrenome</h3>
+                <input id="sobrenome_input" />
+
+                <h3>E-mail</h3>
+                <input id="email_input" />
+
+                <h3>Senha</h3>
+                <input type="password" id="senha_input" />
+            </div>
+        </div>
+        <br>
+        <div class="cadastro">
+            <a href="#"><button onclick="cadastrar()"><b>Cadastrar</b></button></a>
+        </div>
+        <br>
+        <div class="entrar">
+            <b>Já possui uma conta? <a href="./Login.html">Entrar</b></a>
+        </div>
+        <!-- <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif">
+        </div> -->
+    </div>
+    <footer>
+        <div class="RedeSocial">
+            <div>
+                <h3>
+                    Redes Sociais
+                </h3>
+            </div>
+            <div>
+                <a href="https://github.com/GiovannaAliaga">
+                    <img src="./Imagens/github-logo.png" alt="">
+                  </a>
+                  <a href="https://www.linkedin.com/in/giovanna-aliaga-1176341a2">
+                    <img src="./Imagens/linkedin.png" alt="">
+                  </a>
+                  <a href="https://instagram.com/aliaga.makeup?igshid=MjEwN2IyYWYwYw==">
+                    <img src="./Imagens/instagram.png" alt="">
+                  </a>
+
+            </div>
+        </div>
+        <div class="contato">
+            <h3>
+                Contato
+            </h3>
+            <b>giovannasardinha@icloud.com</b>
+        </div>
+        <div class="LogoFooter">
+            <img src="./Imagens/LogoPreta.png">
+        </div>
+        <div class="direitos">
+            <b>© 2023 Giovanna Sardinha Aliaga. Todos os direitos reservados.</b>
+        </div>
+
+    </footer>
+</body>
+<div id="div_erros_login"></div>
+
+</html>
+<script>
+    function cadastrar() {
+
+        var nomeVar = nome_input.value;
+        var sobrenomeVar = sobrenome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        
+    if (nomeVar == "" || sobrenomeVar == "" || emailVar == "" || senhaVar == "" ) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Por favor, preencha todos os campos.'
+            });
+
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+            mensagem_erro.innerHTML = `<b>Cadastro realizado com sucesso! Redirecionando para tela de Login...</b>`;
+
+                setTimeout(() => {
+                    window.location = "./login.html";
+                }, "2000")
+
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+        
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+    
+</script>
